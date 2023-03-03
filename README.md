@@ -92,14 +92,14 @@ Configue the package
 
 **Step 6:**
 
-Time to build
+Build
 
-`sudo  ./autogen.sh; sudo ./configure; sudo make`
+`sudo ./autogen.sh; sudo ./configure; sudo make`
 
 
 **Step 7:**
 
-We will install ckpool so that we can call it from anywhere
+Install ckpool so that we can call it from anywhere
 
 `sudo make install`
 
@@ -127,15 +127,19 @@ server=1
 rpcuser=user
 rpcpassword=pass
 rpcallowip=127.0.0.1
+rpcauth=user:somelonghashthatyoumadesecure
 ```
 
+You also need to make sure you have rpcauth setup:
+https://jlopp.github.io/bitcoin-core-rpc-auth-generator/
+https://github.com/bitcoin/bitcoin/blob/master/share/rpcauth/rpcauth.py
 
 ctlr+x then y then enter
 
 
 **Step 10:**
 
-we will set up a notifier script, as required for ckpool
+Set up a notifier script
 
 `sudo nano /usr/bin/notify.sh`
 
@@ -153,7 +157,7 @@ ctrl+x then press y then enter
 
 Start bitcoind again
 
-`bitcoind -daemon -blocknotify=/usr/bin/notify.sh --prune=550 --dbcache=1000`
+`bitcoind -daemon -blocknotify=/usr/bin/notify.sh`
 
 
 
@@ -161,7 +165,7 @@ Start bitcoind again
 
 Edit ckpool.conf to replace serverurl, nodeserver, trusted with "localhost:3336"
 
-it should look like this
+it should look like this, where localhost is the address of your server 
 
 ```
 "serverurl" : [
@@ -186,7 +190,7 @@ Edit upstream url too, with localhost:3336
 
 "upstream" : "localhost:3336"
 
-Make sure to edit btc address in the config file, to match yours :) 
+Make sure to edit btc address in the config file, to match yours, and the notifier section.
 
 
 
