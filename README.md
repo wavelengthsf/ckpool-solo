@@ -71,11 +71,13 @@ Next, edit ckpool.h and comment out line 357:
 
 Replace:
 
-	ckpool_t *global_ckp; //Commented to ignore multiple definitions error
+	ckpool_t *global_ckp; 
 
 With
 
 	//ckpool_t *global_ckp; //Commented to ignore multiple definitions error
+	ckpool_t &global_ckp_ref = *global_ckp;
+
 
 	
 dpkg -l pkg-config
