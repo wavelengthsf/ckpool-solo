@@ -199,3 +199,7 @@ Make sure to edit btc address in the config file, to match yours, and the notifi
 Run the pool
 
 `sudo ckpool -L`
+
+Point your miner to stratum+tcp://<ip of pool>:3333 with any username and password. 
+	
+But really, don't do this. There is a high risk you'll lose a block if you get astronomically lucky and actually solve one. Mine at kano's pool: kano.is
