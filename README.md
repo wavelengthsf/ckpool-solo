@@ -1,5 +1,6 @@
 # ckpool-solo
 Run CKPOOL solo
+This was written for a user in KanoPool's Bitcoin discord. Adapted from: https://github.com/edgycorner/CK-Pool-installation-with-Bitcoin-Core-22.0-with-fixes-on-Ubuntu-
 
 **Step 1:**
 
